@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas M01 -Zidane alfahrezi</title>
+    <style>
+        body {
+            background-color: #E34BFA;
+        }
+        .box {
+            background-color: white;
+            margin-left: auto;
+            margin-right: auto;
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5%;
+        }
+        h2 {
+            margin-left: 10px;
+            color: #2e3228;
+        }
+        form {
+            margin-left: 10px;
+        }
+        form input {
+            margin-bottom: 5px;
+            border-radius: 4px;
+            border: 1px black solid;
+            padding: 5px;
+        }
+        button {
+            margin-top: 10px;
+            width: 80px;
+            background-color: #E34BFA;
+            border-style: none;
+            color: white;
+            border-radius: 3px;
+            padding: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #90CFFF;
+        }
+    </style>
+</head>
+<body>
 
+    </form>
+    <div class="box">
+    <h2>Kalkulator BMI</h2>
+        <form action="#">
+            <input type="text" id="berat" placeholder="Berat Badan (Kg)">
+            <br>
+            <input type="text" id="tinggi" placeholder="Tinggi Badan (M)">
+            <br>
+            <button id="submit">Submit</button>
+            <p>BMI : <b id="bmi"></b></p>
+            <p>Kategori : <b id="kategori"></b></p>
+        </form>
+    </div>
+    <script>
+
+        let submit = document.getElementById("submit")
+
+        submit.onclick = function() {
+            let tinggi = document.getElementById("tinggi").value
+            let berat = document.getElementById("berat").value
+            let totalBmi = parseFloat(berat) / parseFloat(tinggi) ** 2
+            let bmi = document.getElementById("bmi")
+            let kategori = document.getElementById("kategori")
+
+            if (totalBmi < 15) {
+                bmi.innerHTML = totalBmi
+                kategori.innerHTML = ("Berat badan sangat kurang")
+            }
+            else if (totalBmi >= 15 && totalBmi < 18.5) {
+                bmi.innerHTML = totalBmi
+                kategori.innerHTML = ("Berat badan kurang (Underweight)")
+            }
+            else if (totalBmi >= 18.5 && totalBmi < 24) {
+                bmi.innerHTML = totalBmi
+                kategori.innerHTML = ("Berat badan normal")
+            }
+            else if (totalBmi >= 24 && totalBmi <= 29) {
+                bmi.innerHTML = totalBmi
+                kategori.innerHTML = ("Kelebihan berat badan (Overweight)")
+            }
+            else if (totalBmi > 29) {
+                bmi.innerHTML = totalBmi
+                kategori.innerHTML = ("Obesitas")
+            }
+            else {
+                kategori.innerHTML = ("Error")
+            }
+        }
+    </script>
+</body>
+</html>
