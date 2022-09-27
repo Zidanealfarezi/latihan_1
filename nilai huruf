@@ -70,5 +70,25 @@
             let uas = document.getElementById("uas").value
             let huruf = document.getElementById("huruf")
 
-            let total = parseInt(uts) * 0.3 + parseInt(tugas) * 0.4 + parseInt(uas) * 0.3}
+            let total = parseInt(uts) * 0.3 + parseInt(tugas) * 0.4 + parseInt(uas) * 0.3
+
+            if (total >= 80 && total <= 100){
+                huruf.innerHTML = "A"
+            }
+            else if (total >= 70 && total < 80){
+                huruf.innerHTML = "B"
+            }
+            else if (total >= 60 && total < 70){
+                huruf.innerHTML = "C"
+            }
+            else if (total >= 40 && total < 60){
+                huruf.innerHTML = "D"
+            }
+            else if (total < 40){
+                huruf.innerHTML = "E"
+            }
+            else {
+                huruf.innerHTML = "Error"
+            }
+        }
     </script>   
